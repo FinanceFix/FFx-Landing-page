@@ -1,6 +1,6 @@
 <template>
   <div>
-    somethin ghere
+    somethin ghere dfdf
     <NuxtRouteAnnouncer />
     <NuxtWelcome />
   </div>
