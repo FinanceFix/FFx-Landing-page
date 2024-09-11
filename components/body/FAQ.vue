@@ -6,6 +6,8 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+import submitForm from "./form.vue";
+
 const defaultValue = "item-1";
 
 const accordionItems = [
@@ -29,13 +31,20 @@ const accordionItems = [
 </script>
 
 <template>
-  <div class="mb-40 flex flex-rows justify-evenly">
+  <div
+    class="flex flex-row justify-evenly w-2/3 mx-auto mt-[201px] pb-[70px] mb-[120px]"
+  >
     <div class="basis-2/5">
-      <h2 class="text-center mx-auto text-4xl font-bold my-4">
-        Des questions sur FinanceFix?
+      <h2 class="text-left mx-auto text-[64px] font-bold my-4 leading-[4.5rem]">
+        Foire aux
+        <span>questions</span>
       </h2>
+      <p class="text-[20px]">
+        On ne peut pas améliorer ce que l'on ne suit pas. Nous automatisons le
+        suivi de votre patrimoine.
+      </p>
     </div>
-    <div class="basis-2/5">
+    <div class="basis-2/5 text-[20px]">
       <Accordion
         type="single"
         class="w-full"
@@ -53,6 +62,29 @@ const accordionItems = [
           </AccordionContent>
         </AccordionItem>
       </Accordion>
+    </div>
+  </div>
+
+  <div class="relative">
+    <div
+      class="absolute blur-[100px] -z-20 -right-96 opacity-80 -top-64 w-[38rem] h-[38rem] bg-green-600 rounded-full"
+    ></div>
+
+    <div
+      class="w-4/5 absolute left-1/2 transform -translate-x-1/2 -top-[100px] mx-auto text-center bg-[#0077365C] py-[6px] px-[70px] rounded-[40px] h-[260px]"
+    >
+      <h2 class="text-[40px] font-bold my-[16px]">
+        Rejoindre la liste d'attente
+      </h2>
+      <p class="mb-[10px]">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat
+      </p>
+      <div class="flex justify-center">
+        <submitForm />
+      </div>
     </div>
   </div>
 </template>

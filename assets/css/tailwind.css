@@ -36,6 +36,16 @@
     --radius: 0.5rem;
   }
  
+
+  body {
+    background-image: url('../../image/background_ffx.jpg'); 
+    color: white;
+    overflow-x: hidden;
+  }
+
+  
+
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -68,11 +78,3 @@
   }
 }
  
-/* @layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-  } */
-/* } */
