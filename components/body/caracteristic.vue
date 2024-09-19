@@ -1,35 +1,23 @@
-<script setup lang="ts">
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-</script>
 
 <template>
-  <div class="mt-[161px]">
+  <div class=" my-40">
     <Tabs
       default-value="utilisation"
-      class="flex flex-row justify-evenly text-left w-2/3 mx-auto h-[700px]"
+      class="flex flex-row justify-evenly text-left w-[70%] mx-auto h-[700px]"
     >
       <div class="flex flex-col justify-between w-2/5">
-        <div>
-          <h3 class="font-bold my-[23px] leading-[4.5rem] text-[64px] pl-3">
+        <div class="flex flex-col gap-4">
+          <span class="font-bold font-primary my-4  text-6xl">
             Suivre votre patrimoine
-          </h3>
-          <p class="pl-3 text-[20px]">
-            On ne peut pas améliorer ce que l'on ne suit pas.Nous automatisons
-            le suivi de votre patrimoine.
-          </p>
+          </span>
+          <span class=" font-secondary">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet atque deleniti dicta ea earum eius error explicabo, fugit id iste magnam magni molestias provident quam qui recusandae totam unde voluptatum.
+          </span>
         </div>
         <TabsList class="flex flex-col justify-evenly basis-3/4">
           <TabsTrigger
             value="utilisation"
-            class="bg-[#142032] w-full basis-1/4"
+            class="bg-[#142032] border-[#1D3354] rounded-xl w-full p-4 h-auto"
           >
             Une interface intuitive, même pour les débutants en gestion
             financière
@@ -100,3 +88,16 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
     </Tabs>
   </div>
 </template>
+<script setup lang="ts">
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+</script>
+
+<style scoped></style>

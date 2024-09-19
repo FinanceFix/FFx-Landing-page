@@ -1,33 +1,53 @@
 <template>
   <div
-    class="relative mt-[274px] flex flex-rows justify-evenly h-[400px] text-left"
+    class="relative  flex items-center justify-center my-40 "
   >
-    <!-- Ellipse gradient -->
-    <div
-      class="absolute blur-[100px] -left-96 opacity-80 -top-10 w-[38rem] h-[38rem] bg-green-600 rounded-full z-0"
-    ></div>
+<!--    &lt;!&ndash; Ellipse gradient &ndash;&gt;-->
+<!--    <div-->
+<!--      class="absolute blur-[100px] -left-96 opacity-80 -top-10 w-[38rem] h-[38rem] bg-green-600 rounded-full z-0"-->
+<!--    ></div>-->
 
     <!-- Content section -->
-    <div class="flex flex-row justify-evenly w-2/3 mx-auto">
-      <div class="bg-slate-800 w-2/5"></div>
-      <div class="w-2/5">
-        <h2 class="text-[64px] font-bold my-4 leading-[4.5rem]">
-          Vote des fonctionnalités
-        </h2>
-        <p class="text-[20px]">
-          Notre application se distingue par sa capacité à vous offrir une
-          expérience utilisateur fluide et intuitive.
-        </p>
-        <button
-          href="#"
-          class="rounded-full py-3 px-16 mt-12 font-bold text-[#FFFFFF] bg-green-800"
-        >
-          En savoir plus
-        </button>
+    <div class="grid grid-cols-2  gap-10   w-[70%]">
+      <div class=" flex flex-col justify-center items-center gap-10 col-span-1">
+
+        <Feed></Feed>
+        <Feed></Feed>
+        <Feed></Feed>
+      </div>
+      <div class=" flex flex-col gap-6">
+        <div>
+          <span class="text-6xl font-bold my-4 font-primary">
+            Vote des fonctionnalités
+          </span>
+        </div>
+      <div>
+        <span class="text-lg">
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur dolore est in praesentium quae quaerat quidem, sapiente similique vitae voluptas. Aliquid asperiores autem eveniet expedita laudantium modi, odit saepe ullam!
+        </span>
+      </div>
+
+        <div class="flex">
+          <CTA :text="'Tout le monde va bien'" show-icon></CTA>
+        </div>
       </div>
     </div>
   </div>
 </template>
 
-<script setup></script>
+<script setup>
+
+const config = useRuntimeConfig()
+// const queryClient = useQueryClient()
+
+// Query
+const { isLoading, isError, data, error } = useQuery({
+  queryKey: ['todos'],
+  queryFn: () => $fetch(config.public?.fiderUrl), // Use $fetch with your api routes to get typesafety
+})
+
+watch(data, ()=> {
+  console.log('data', data.value)
+})
+</script>
 <style scoped></style>
