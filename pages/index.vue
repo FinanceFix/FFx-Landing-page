@@ -10,16 +10,14 @@ import foot from "@/components/navbar/footer.vue";
 <template>
     <Navbar />
 
-  <main>
+  <main class="flex flex-col gap-60">
     <Description />
     <Caracteristic />
     <Features />
     <FAQs />
   </main>
 
-  <footer>
     <foot />
-  </footer>
 </template>
 
 <style scoped>

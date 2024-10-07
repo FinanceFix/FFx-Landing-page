@@ -1,12 +1,12 @@
 
 
 <template>
-  <div class="w-full  flex justify-center items-center my-40">
+  <div class="w-full  flex justify-center items-center">
     <div
-        class="grid  grid-cols-2 gap-10 w-[70%] items-center   h-[500px]"
+        class="grid  grid-cols-2 gap-10 w-[70%] max-w-[1200px]   h-[500px]"
     >
-      <div class="flex flex-col gap-5">
-        <span class=" text-6xl font-bold font-primary w-[70%] ">
+      <div class="flex flex-col   gap-8">
+        <span class=" text-7xl  font-bold font-primary w-[70%] ">
           Foire aux
           <span>questions</span>
         </span>
@@ -21,53 +21,33 @@
             collapsible
             :default-value="defaultValue"
         >
-          <AccordionItem
+          <AccordionPanel
               v-for="item in accordionItems"
               :key="item.value"
               :value="item.value"
           >
-            <AccordionTrigger class="font-primary text-xl">{{ item.title }}</AccordionTrigger>
+            <AccordionHeader class="font-primary text-xl">{{ item.title }}</AccordionHeader>
             <AccordionContent class="text-lg font-secondary">
               {{ item.content }}
             </AccordionContent>
-          </AccordionItem>
+          </AccordionPanel>
         </Accordion>
       </div>
     </div>
   </div>
-<!--  <div class="relative">-->
-<!--    <div-->
-<!--      class="absolute blur-[100px] -z-20 -right-96 opacity-80 -top-64 w-[38rem] h-[38rem] bg-green-600 rounded-full"-->
-<!--    ></div>-->
+  <div class="relative">
+    <div
+      class="absolute blur-[100px] -z-20 -right-96 opacity-80 -top-64 w-[38rem] h-[38rem] bg-green-600 rounded-full"
+    ></div>
 
-<!--    <div-->
-<!--      class="w-4/5 absolute left-1/2 transform -translate-x-1/2 -top-[100px] mx-auto text-center bg-[#0077365C] py-[6px] px-[70px] rounded-[40px] h-[260px]"-->
-<!--    >-->
-<!--      <h2 class="text-[40px] font-bold my-[16px]">-->
-<!--        Rejoindre la liste d'attente-->
-<!--      </h2>-->
-<!--      <p class="mb-[10px]">-->
-<!--        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod-->
-<!--        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim-->
-<!--        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea-->
-<!--        commodo consequat-->
-<!--      </p>-->
-<!--      <div class="flex justify-center">-->
-<!--        <submitForm />-->
-<!--      </div>-->
-<!--    </div>-->
-<!--  </div>-->
+  </div>
 </template>
 <script setup lang="ts">
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
-import submitForm from "./form.vue";
-
+import SubmitForm from './form.vue'
+import Accordion from 'primevue/accordion'
+import AccordionPanel from 'primevue/accordionpanel';
+import AccordionHeader from 'primevue/accordionheader';
+import AccordionContent from 'primevue/accordioncontent';
 const defaultValue = "item-1";
 
 const accordionItems = [

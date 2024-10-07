@@ -3,11 +3,12 @@ const animate = require("tailwindcss-animate")
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './src/components/**/*.{js,vue,ts}',
-    './src/layouts/**/*.vue',
-    './src/pages/**/*.vue',
-    './src/plugins/**/*.{js,ts}',
-    './src/app.vue',
+    './components/**/*.{js,vue,ts}',
+    './layouts/**/*.vue',
+    './pages/**/*.vue',
+    './plugins/**/*.{js,ts}',
+    './app.vue',
+    './presets/financefix/**/*.{js,vue,ts}',
   ],
   theme: {
     container: {
@@ -41,6 +42,7 @@ module.exports = {
       },
     },
   },
-  plugins: [animate],
+  plugins: [animate, require('tailwindcss-primeui')],
+
 
 }

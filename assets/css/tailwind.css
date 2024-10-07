@@ -77,13 +77,13 @@
 @font-face {
   font-family: 'Inter';
   font-style: normal;
-  font-weight: 900;
+  font-weight: 500;
   font-display: swap;
-  src: url('../fonts/Inter.woff') format('woff');
+  src: url('../fonts/Inter.woff') format('woff'), url('../fonts/Inter_28pt-ExtraBold.woff') format('woff');
 }
 @font-face {
   font-family: 'Manrope';
   font-style: normal;
-  font-weight: 500;
+  font-weight: 200;
   src: url('../fonts/Manrope.woff') format('woff'), url('../fonts/Manrope-Medium.woff2') format('woff2');
 }

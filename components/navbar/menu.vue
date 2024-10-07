@@ -1,30 +1,28 @@
 <template>
-<div class="flex justify-center items-center py-10 ">
-  <div class="w-[70%] max-w-[1195px] fixed top-10 z-[10000]">
+<div class="  ">
+  <div class="w-full z-[10000]  ">
     <div
-        class="bg-primary-0  rounded-full flex justify-between items-center px-4 py-5"
+        class="border-b-2 border-[#172a45]   flex justify-around items-center  px-4 py-5"
     >
-      <div class="pl-5 ">
-        <nuxt-img
-            src="./img/FFx.png"
-            width="70px"
-            height="50px"
-        />
+      <div>
+        <span class="font-primary text-3xl font-bold"><span class="text-green-500">F</span>inance<span class="text-green-500">F</span>ix</span>
       </div>
-      <div class="flex gap-5  ">
+      <div class=" flex gap-7 justify-center items-center ">
+        <div class="flex gap-5">
 
-        <NuxtLink v-for="(link, index) of menuLinks" :to="link.linkTo" :key="index">
-          <span class="text-white text-xl font-primary cursor-pointer font-extrabold">{{link.name}}</span>
-        </NuxtLink>
-
-        <div class="flex justify-evenly items-center">
-          <NuxtLink v-for="locale in availableLocales" class="cursor-pointer" :key="locale.code" :to="switchLocalePath(locale.code)">
-           <span class="text-xl font-extrabold font-primary uppercase"> {{ locale.name }}</span>
+          <NuxtLink v-for="(link, index) of menuLinks" :to="link.linkTo" :key="index">
+            <span class="text-white text-xl font-primary cursor-pointer font-extrabold">{{link.name}}</span>
           </NuxtLink>
+
+          <div class="flex justify-evenly items-center">
+            <NuxtLink v-for="locale in availableLocales" class="cursor-pointer" :key="locale.code" :to="switchLocalePath(locale.code)">
+              <span class="text-xl font-extrabold font-primary uppercase"> {{ locale.name }}</span>
+            </NuxtLink>
+          </div>
         </div>
-      </div>
-      <div class="">
+
         <CTA :text="$t('shared.jointhewaitinglist')" show-icon></CTA>
+
       </div>
     </div>
   </div>

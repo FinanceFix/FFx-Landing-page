@@ -24,10 +24,13 @@
     "shadcn-nuxt": "^0.10.4",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
+    "tailwindcss-primeui": "^0.3.4",
     "vue": "latest"
   },
   "devDependencies": {
     "@nuxtjs/tailwindcss": "^6.12.1",
+    "@primevue/nuxt-module": "^4.0.7",
+    "add": "^2.0.6",
     "typescript": "^5.5.4"
   }
 }

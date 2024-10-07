@@ -1,11 +1,25 @@
+import path from "node:path";
+
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     'shadcn-nuxt',
     '@nuxt/image',
     '@nuxtjs/i18n',
-    '@hebilicious/vue-query-nuxt'
+    '@hebilicious/vue-query-nuxt',
+      '@primevue/nuxt-module'
   ],
+  primevue: {
+    options: {
+      unstyled: true
+    },
+    importPT:  {
+      from:  '~/presets/financefix'
+    },
+    components: {
+      include:  ['Tabs', 'TabList', 'Tab', 'TabPanels', 'TabPanel', 'Accordion', 'AccordionTab', 'AccordionPanel', 'AccordionHeader', 'AccordionContent']
+    }
+  },
   i18n: {
     vueI18n: './i18n.config.ts',
     strategy: 'prefix_except_default',
@@ -39,19 +53,13 @@ export default defineNuxtConfig({
     },
   },
   runtimeConfig: {
+    fiderApiKey: process.env.FIDER_API_KEY,
       public: {
-        fiderUrl: process.env.FIDER_URL
+        fiderUrl: process.env.FIDER_URL,
       }
   },
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: '',
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: './components/ui'
   },
   tailwindcss: {

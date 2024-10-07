@@ -1,6 +1,6 @@
 
 <template>
- <div :class="['flex gap-3 rounded-full py-4 font-primary text-lg px-10 font-extrabold items-center custom-gradient shadow-inner', props.class]">
+ <div :class="['flex gap-3 rounded-full py-4 font-primary text-lg px-10 font-extrabold cursor-pointer items-center custom-gradient shadow-inner', props.class]">
   <div>
       <span
       >

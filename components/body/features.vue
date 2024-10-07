@@ -1,6 +1,6 @@
 <template>
   <div
-    class="relative  flex items-center justify-center my-40 "
+    class="relative  flex items-center justify-center "
   >
 <!--    &lt;!&ndash; Ellipse gradient &ndash;&gt;-->
 <!--    <div-->
@@ -8,7 +8,7 @@
 <!--    ></div>-->
 
     <!-- Content section -->
-    <div class="grid grid-cols-2  gap-10   w-[70%]">
+    <div class="grid grid-cols-2  gap-10  max-w-[1400px] ">
       <div class=" flex flex-col justify-center items-center gap-10 col-span-1">
 
         <Feed></Feed>
