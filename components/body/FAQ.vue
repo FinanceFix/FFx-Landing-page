@@ -1,90 +1,81 @@
+
+
+<template>
+  <div class="w-full  flex justify-center items-center">
+    <div
+        class="grid  grid-cols-2 gap-10 w-[70%] max-w-[1200px]   h-[500px]"
+    >
+      <div class="flex flex-col   gap-8">
+        <span class=" text-7xl  font-bold font-primary w-[70%] ">
+          Foire aux
+          <span>questions</span>
+        </span>
+        <span class="text-lg font-secondary">
+         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium atque deleniti distinctio dolorum earum eum harum id, ipsam magni molestias nihil nisi porro quaerat ratione sunt suscipit tempora tenetur unde.
+        </span>
+      </div>
+      <div >
+        <Accordion
+            type="single"
+            class="w-full"
+            collapsible
+            :default-value="defaultValue"
+        >
+          <AccordionPanel
+              v-for="item in accordionItems"
+              :key="item.value"
+              :value="item.value"
+          >
+            <AccordionHeader class="font-primary text-xl">{{ item.title }}</AccordionHeader>
+            <AccordionContent class="text-lg font-secondary">
+              {{ item.content }}
+            </AccordionContent>
+          </AccordionPanel>
+        </Accordion>
+      </div>
+    </div>
+  </div>
+  <div class="relative">
+    <div
+      class="absolute blur-[100px] -z-20 -right-96 opacity-80 -top-64 w-[38rem] h-[38rem] bg-green-600 rounded-full"
+    ></div>
+
+  </div>
+</template>
 <script setup lang="ts">
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-
-import submitForm from "./form.vue";
-
+import SubmitForm from './form.vue'
+import Accordion from 'primevue/accordion'
+import AccordionPanel from 'primevue/accordionpanel';
+import AccordionHeader from 'primevue/accordionheader';
+import AccordionContent from 'primevue/accordioncontent';
 const defaultValue = "item-1";
 
 const accordionItems = [
   {
     value: "item-1",
     title: "Is it accessible?",
-    content: "Yes. It adheres to the WAI-ARIA design pattern.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium deleniti dolores est et excepturi expedita illo ipsa libero neque nobis non nulla quo ratione, sunt, unde ut. Laboriosam, sunt!\n",
   },
   {
     value: "item-2",
     title: "Is it unstyled?",
     content:
-      "Yes. It's unstyled by default, giving you freedom over the look and feel.",
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium deleniti dolores est et excepturi expedita illo ipsa libero neque nobis non nulla quo ratione, sunt, unde ut. Laboriosam, sunt!\n",
   },
   {
     value: "item-3",
     title: "Can it be animated?",
-    content: "Yes! You can use the transition prop to configure the animation.",
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium deleniti dolores est et excepturi expedita illo ipsa libero neque nobis non nulla quo ratione, sunt, unde ut. Laboriosam, sunt!\n",
+  },
+  {
+    value: "item-3",
+    title: "Can it be animated?",
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium deleniti dolores est et excepturi expedita illo ipsa libero neque nobis non nulla quo ratione, sunt, unde ut. Laboriosam, sunt!\n",
+  },
+  {
+    value: "item-3",
+    title: "Can it be animated?",
+    content: "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusantium deleniti dolores est et excepturi expedita illo ipsa libero neque nobis non nulla quo ratione, sunt, unde ut. Laboriosam, sunt!\n",
   },
 ];
 </script>
-
-<template>
-  <div
-    class="flex flex-row justify-evenly w-2/3 mx-auto mt-[201px] pb-[70px] mb-[120px]"
-  >
-    <div class="basis-2/5">
-      <h2 class="text-left mx-auto text-[64px] font-bold my-4 leading-[4.5rem]">
-        Foire aux
-        <span>questions</span>
-      </h2>
-      <p class="text-[20px]">
-        On ne peut pas améliorer ce que l'on ne suit pas. Nous automatisons le
-        suivi de votre patrimoine.
-      </p>
-    </div>
-    <div class="basis-2/5 text-[20px]">
-      <Accordion
-        type="single"
-        class="w-full"
-        collapsible
-        :default-value="defaultValue"
-      >
-        <AccordionItem
-          v-for="item in accordionItems"
-          :key="item.value"
-          :value="item.value"
-        >
-          <AccordionTrigger>{{ item.title }}</AccordionTrigger>
-          <AccordionContent>
-            {{ item.content }}
-          </AccordionContent>
-        </AccordionItem>
-      </Accordion>
-    </div>
-  </div>
-
-  <div class="relative">
-    <div
-      class="absolute blur-[100px] -z-20 -right-96 opacity-80 -top-64 w-[38rem] h-[38rem] bg-green-600 rounded-full"
-    ></div>
-
-    <div
-      class="w-4/5 absolute left-1/2 transform -translate-x-1/2 -top-[100px] mx-auto text-center bg-[#0077365C] py-[6px] px-[70px] rounded-[40px] h-[260px]"
-    >
-      <h2 class="text-[40px] font-bold my-[16px]">
-        Rejoindre la liste d'attente
-      </h2>
-      <p class="mb-[10px]">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim
-        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
-        commodo consequat
-      </p>
-      <div class="flex justify-center">
-        <submitForm />
-      </div>
-    </div>
-  </div>
-</template>
