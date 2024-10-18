@@ -1,4 +1,3 @@
-
 <template>
   <div class="flex w-full max-w-sm items-center gap-1.5 relative">
     <Input id="email" type="email" placeholder="Email" />
