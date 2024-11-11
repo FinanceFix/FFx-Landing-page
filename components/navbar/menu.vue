@@ -14,7 +14,7 @@
         </div>
         <div class="flex gap-7 justify-center items-center">
           <div class="flex gap-5">
-            <NuxtLink
+            <!-- <NuxtLink
               class="md:hidden lg:flex hidden"
               v-for="(link, index) of menuLinks"
               :to="link.linkTo"
@@ -24,7 +24,7 @@
                 class="text-white md:text-xl text-base font-primary cursor-pointer font-extrabold"
                 >{{ link.name }}</span
               >
-            </NuxtLink>
+            </NuxtLink> -->
 
             <div
               class="flex lg:text-xl md:text-base text-xs justify-evenly items-center"
